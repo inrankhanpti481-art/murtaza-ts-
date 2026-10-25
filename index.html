@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MURTAZA TS | آن لائن درزی</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Jameel Noori Nastaleeq", Tahoma, Arial, sans-serif;
+      background: #f7f4ec;
+      color: #17231d;
+      line-height: 2;
+    }
+
+    header {
+      background: linear-gradient(130deg, #0d2b21, #1d6548);
+      color: white;
+      padding: 25px 16px;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 5px 20px #00000010;
+    }
+
+    h2 {
+      color: #1f6b4d;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #cbd6cd;
+      border-radius: 9px;
+      font-size: 16px;
+      font-family: inherit;
+      background: white;
+    }
+
+    textarea {
+      min-height: 90px;
+    }
+
+    button, .whatsapp {
+      display: block;
+      width: 100%;
+      margin-top: 18px;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      background: #1f6b4d;
+      color: white;
+      text-align: center;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .contact {
+      background: #eef7ef;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #637168;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        font-size: 26px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">MURTAZA TS</div>
+    <p>آپ کے کپڑے، ہماری مہارت ✂️</p>
+    <h1>آن لائن سلائی کا آرڈر دیں</h1>
+    <p>اپنا آرڈر دیں اور قیمت معلوم کریں۔</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>🧵 آرڈر فارم</h2>
+
+      <form id="orderForm">
+
+        <label for="name">آپ کا نام *</label>
+        <input id="name" required placeholder="اپنا نام لکھیں">
+
+        <label for="phone">موبائل نمبر *</label>
+        <input id="phone" type="tel" required
+          placeholder="03xx xxxxxxx">
+
+        <label for="kind">کپڑوں کی قسم *</label>
+        <select id="kind" required>
+          <option value="">منتخب کریں</option>
+          <option>مردانہ شلوار قمیض</option>
+          <option>پینٹ شرٹ</option>
+          <option>ویسٹ کوٹ</option>
+          <option>زنانہ سوٹ</option>
+          <option>بچوں کے کپڑے</option>
+          <option>دیگر</option>
+        </select>
+
+        <label for="qty">جوڑوں کی تعداد</label>
+        <input id="qty" type="number" min="1"
+          max="100" value="1" required>
+
+        <label for="requestType">درخواست کی قسم</label>
+        <select id="requestType">
+          <option>قیمت معلوم کرنا</option>
+          <option>آرڈر کنفرم کرنا</option>
+        </select>
+
+        <label for="size">سائز یا پیمائش</label>
+        <input id="size" placeholder="اپنی پیمائش لکھیں">
+
+        <label for="date">ڈیلیوری کی تاریخ</label>
+        <input id="date" type="date">
+
+        <label for="design">ڈیزائن کی تفصیل</label>
+        <textarea id="design"
+          placeholder="اپنی پسند کا ڈیزائن لکھیں"></textarea>
+
+        <label for="address">علاقہ یا پتہ</label>
+        <input id="address" placeholder="اپنا علاقہ لکھیں">
+
+        <button type="submit">
+          واٹس ایپ پر آرڈر بھیجیں
+        </button>
+
+      </form>
+
+      <div class="contact">
+        <h2>📞 ہم سے رابطہ کریں</h2>
+        <p dir="ltr">0334 9041077</p>
+
+        <a class="whatsapp"
+          href="https://wa.me/923349041077"
+          target="_blank" rel="noopener">
+          واٹس ایپ کھولیں
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> MURTAZA TS
+    — آن لائن درزی سروس
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("orderForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const value = id =>
+          document.getElementById(id).value.trim();
+
+        const message =
+          "MURTAZA TS - آرڈر کی درخواست\n" +
+          "نام: " + value("name") + "\n" +
+          "موبائل: " + value("phone") + "\n" +
+          "کپڑوں کی قسم: " + value("kind") + "\n" +
+          "جوڑوں کی تعداد: " + value("qty") + "\n" +
+          "درخواست: " + value("requestType") + "\n" +
+          "سائز: " + value("size") + "\n" +
+          "ڈیلیوری تاریخ: " + value("date") + "\n" +
+          "ڈیزائن: " + value("design") + "\n" +
+          "پتہ: " + value("address");
+
+        const whatsappURL =
+          "https://wa.me/923349041077?text=" +
+          encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+      });
+  </script>
+
+</body>
+</html>

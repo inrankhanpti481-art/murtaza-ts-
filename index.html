@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
@@ -16,6 +17,7 @@
   --gold: #d9b66d;
   --cream: #f7f2e7;
   --ink: #18271f;
+  --red: #c62828;
 }
 
 * {
@@ -235,6 +237,11 @@ label {
   font-size: 14px;
 }
 
+.required-star {
+  color: var(--red);
+  font-weight: bold;
+}
+
 input,
 select,
 textarea {
@@ -364,7 +371,7 @@ footer b {
       <h1>آپ کے لیے نفیس سلائی،<br>آپ کے پسندیدہ انداز میں</h1>
 
       <p>
-        اپنی پیمائش اور ڈیزائن کی تفصیلات بھیجیں۔
+        اپنی پیمائش اور ڈیزائن کی تفصیلات درج کریں۔
         ہم آپ کے آرڈر کی رہنمائی واٹس ایپ پر کریں گے۔
       </p>
 
@@ -417,7 +424,7 @@ footer b {
     <section class="card" id="order">
       <h2>آرڈر فارم</h2>
       <p class="hint">
-        درست معلومات درج کریں تاکہ آپ کے آرڈر پر بات ہو سکے۔
+        ستارے (*) والے خانے لازمی ہیں۔
       </p>
 
       <form id="orderForm">
@@ -425,19 +432,43 @@ footer b {
         <div class="form-grid">
 
           <div class="field">
-            <label for="name">آپ کا نام *</label>
+            <label for="name">آپ کا نام <span class="required-star">*</span></label>
             <input id="name" name="name" required
+                   autocomplete="name"
                    placeholder="اپنا نام لکھیں">
           </div>
 
           <div class="field">
-            <label for="phone">موبائل نمبر *</label>
+            <label for="phone">موبائل نمبر <span class="required-star">*</span></label>
             <input id="phone" name="phone" type="tel" required
+                   autocomplete="tel"
                    placeholder="03xx xxxxxxx">
           </div>
 
+          <div class="field full">
+            <label for="cnic">
+              شناختی کارڈ نمبر (CNIC)
+              <span class="required-star">⭐ *</span>
+            </label>
+            <input
+              id="cnic"
+              name="cnic"
+              type="text"
+              required
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="XXXXX-XXXXXXX-X"
+              pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}"
+              maxlength="15"
+              title="CNIC اس فارمیٹ میں درج کریں: 12345-1234567-1">
+            <p class="note">
+              CNIC حساس ذاتی معلومات ہے۔ اسے صرف حقیقی ضرورت کے مطابق درج کریں۔
+              WhatsApp پر بھیجنے سے پہلے معلومات چیک کریں۔
+            </p>
+          </div>
+
           <div class="field">
-            <label for="clothes">لباس کی قسم *</label>
+            <label for="clothes">لباس کی قسم <span class="required-star">*</span></label>
             <select id="clothes" name="clothes" required>
               <option value="">منتخب کریں</option>
               <option>شلوار قمیض</option>
@@ -449,7 +480,7 @@ footer b {
           </div>
 
           <div class="field">
-            <label for="qty">لباس کی تعداد *</label>
+            <label for="qty">لباس کی تعداد <span class="required-star">*</span></label>
             <input id="qty" name="qty" type="number"
                    min="1" value="1" required>
           </div>
@@ -541,6 +572,7 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
   const fields = [
     ["name", "نام"],
     ["phone", "موبائل نمبر"],
+    ["cnic", "شناختی کارڈ نمبر (CNIC)"],
     ["clothes", "لباس کی قسم"],
     ["qty", "تعداد"],
     ["request", "آرڈر کی نوعیت"],

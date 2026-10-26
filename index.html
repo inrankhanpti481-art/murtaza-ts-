@@ -1,239 +1,572 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MURTAZA TS | آن لائن درزی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092b22">
+<title>MURTAZA TS | درزی اینڈ ٹیلرنگ</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      margin: 0;
-      font-family: "Jameel Noori Nastaleeq", Tahoma, Arial, sans-serif;
-      background: #f7f4ec;
-      color: #17231d;
-      line-height: 2;
-    }
+<style>
+:root {
+  --green: #092b22;
+  --green2: #14543f;
+  --gold: #d9b66d;
+  --cream: #f7f2e7;
+  --ink: #18271f;
+}
 
-    header {
-      background: linear-gradient(130deg, #0d2b21, #1d6548);
-      color: white;
-      padding: 25px 16px;
-      text-align: center;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .logo {
-      font-family: Arial, sans-serif;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header h1 {
-      font-size: 28px;
-      margin-bottom: 5px;
-    }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", Tahoma, sans-serif;
+  line-height: 2;
+}
 
-    .container {
-      max-width: 750px;
-      margin: 25px auto;
-      padding: 0 15px;
-    }
+.topbar {
+  background: #061d17;
+  color: #f5e4b8;
+  text-align: center;
+  padding: 7px 12px;
+  font-size: 13px;
+}
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 5px 20px #00000010;
-    }
+header {
+  background: linear-gradient(125deg, #071e18, #14543f);
+  color: white;
+  padding: 20px;
+}
 
-    h2 {
-      color: #1f6b4d;
-      margin-top: 0;
-    }
+.nav {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-top: 12px;
-    }
+.logo {
+  color: var(--gold);
+  font: bold 28px Arial, sans-serif;
+  letter-spacing: 2px;
+}
 
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      border: 1px solid #cbd6cd;
-      border-radius: 9px;
-      font-size: 16px;
-      font-family: inherit;
-      background: white;
-    }
+.logo small {
+  display: block;
+  color: white;
+  text-align: center;
+  font: 14px "Noto Nastaliq Urdu", Tahoma, sans-serif;
+}
 
-    textarea {
-      min-height: 90px;
-    }
+.nav a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  padding: 5px 14px;
+}
 
-    button, .whatsapp {
-      display: block;
-      width: 100%;
-      margin-top: 18px;
-      padding: 13px;
-      border: none;
-      border-radius: 10px;
-      background: #1f6b4d;
-      color: white;
-      text-align: center;
-      font-size: 17px;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
+.hero {
+  max-width: 1050px;
+  margin: 30px auto 10px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 25px;
+  align-items: center;
+}
 
-    .contact {
-      background: #eef7ef;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 12px;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.8;
+  margin: 5px 0;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #637168;
-      font-size: 14px;
-    }
+.hero p {
+  color: #e2eee7;
+}
 
-    @media (max-width: 500px) {
-      .logo {
-        font-size: 26px;
-      }
+.gold {
+  color: var(--gold);
+}
 
-      header h1 {
-        font-size: 23px;
-      }
+.hero-art {
+  min-height: 230px;
+  border: 1px solid #d9b66d66;
+  border-radius: 22px;
+  background: radial-gradient(circle at center, #34765a, #0b2a21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
 
-      .card {
-        padding: 16px;
-      }
-    }
-  </style>
+.scissors {
+  font-size: 65px;
+  display: block;
+}
+
+.hero-art strong {
+  display: block;
+  color: var(--gold);
+  font-size: 23px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 4px;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #10271d;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+}
+
+.wrap {
+  max-width: 1050px;
+  margin: 28px auto;
+  padding: 0 16px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  margin-bottom: 28px;
+}
+
+.feature {
+  background: white;
+  border: 1px solid #e4e7df;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 22px #153c2710;
+}
+
+.feature b {
+  display: block;
+  color: var(--green2);
+}
+
+.feature span {
+  color: #6e7b72;
+  font-size: 13px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: 26px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #6e7b72;
+  font-size: 14px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(230px, 0.75fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e8e5dc;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 35px #153c2710;
+}
+
+.card h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: 23px;
+}
+
+.hint,
+.note {
+  color: #6e7b72;
+  font-size: 13px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d8dfd8;
+  border-radius: 10px;
+  background: #fcfdfb;
+  color: var(--ink);
+  font: 15px "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", Tahoma, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #338260;
+  border-color: #338260;
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 16px;
+  background: linear-gradient(100deg, #176345, #0b382a);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font: bold 17px "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", Tahoma, sans-serif;
+}
+
+.side-card {
+  background: var(--green);
+  color: white;
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.side-card h3 {
+  color: var(--gold);
+  margin: 0;
+  font-size: 22px;
+}
+
+.side-card p,
+.side-card li {
+  font-size: 14px;
+}
+
+.wa {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #25d366;
+  color: #082d1d;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+footer {
+  background: #061d17;
+  color: #dbe8df;
+  text-align: center;
+  padding: 22px 12px;
+  margin-top: 35px;
+  font-size: 13px;
+}
+
+footer b {
+  color: var(--gold);
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .hero-art {
+    min-height: 170px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">MURTAZA TS</div>
-    <p>آپ کے کپڑے، ہماری مہارت ✂️</p>
-    <h1>آن لائن سلائی کا آرڈر دیں</h1>
-    <p>اپنا آرڈر دیں اور قیمت معلوم کریں۔</p>
-  </header>
+<div class="topbar">
+  نفاست، معیار اور اعتماد — آپ کے لباس کے لیے خصوصی سلائی
+</div>
 
-  <main class="container">
-    <section class="card">
-      <h2>🧵 آرڈر فارم</h2>
+<header>
+  <nav class="nav">
+    <div class="logo">
+      MURTAZA TS
+      <small>درزی اینڈ ٹیلرنگ</small>
+    </div>
+    <a href="#order">آرڈر بک کروائیں</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="gold">آپ کے انداز کی پہچان</div>
+      <h1>آپ کے لیے نفیس سلائی،<br>آپ کے پسندیدہ انداز میں</h1>
+
+      <p>
+        اپنی پیمائش اور ڈیزائن کی تفصیلات بھیجیں۔
+        ہم آپ کے آرڈر کی رہنمائی واٹس ایپ پر کریں گے۔
+      </p>
+
+      <a class="btn btn-gold" href="#order">آرڈر شروع کریں</a>
+
+      <a class="btn btn-outline"
+         href="https://wa.me/923349041077"
+         target="_blank"
+         rel="noopener">
+        واٹس ایپ رابطہ
+      </a>
+    </div>
+
+    <div class="hero-art">
+      <div>
+        <span class="scissors">✂</span>
+        <strong>سلائی میں نفاست</strong>
+        <span>ہر ٹانکے میں توجہ اور معیار</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="features">
+    <div class="feature">
+      <b>✦ نفیس سلائی</b>
+      <span>آپ کے انداز کے مطابق</span>
+    </div>
+
+    <div class="feature">
+      <b>✓ واضح آرڈر تفصیلات</b>
+      <span>پیمائش اور ڈیزائن ایک جگہ</span>
+    </div>
+
+    <div class="feature">
+      <b>☏ آسان رابطہ</b>
+      <span>واٹس ایپ پر آرڈر بھیجیں</span>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>اپنا آرڈر درج کریں</h2>
+    <p>معلومات پُر کریں، پھر آرڈر واٹس ایپ پر بھیجیں۔</p>
+  </div>
+
+  <div class="main-grid">
+
+    <section class="card" id="order">
+      <h2>آرڈر فارم</h2>
+      <p class="hint">
+        درست معلومات درج کریں تاکہ آپ کے آرڈر پر بات ہو سکے۔
+      </p>
 
       <form id="orderForm">
 
-        <label for="name">آپ کا نام *</label>
-        <input id="name" required placeholder="اپنا نام لکھیں">
+        <div class="form-grid">
 
-        <label for="phone">موبائل نمبر *</label>
-        <input id="phone" type="tel" required
-          placeholder="03xx xxxxxxx">
+          <div class="field">
+            <label for="name">آپ کا نام *</label>
+            <input id="name" name="name" required
+                   placeholder="اپنا نام لکھیں">
+          </div>
 
-        <label for="kind">کپڑوں کی قسم *</label>
-        <select id="kind" required>
-          <option value="">منتخب کریں</option>
-          <option>مردانہ شلوار قمیض</option>
-          <option>پینٹ شرٹ</option>
-          <option>ویسٹ کوٹ</option>
-          <option>زنانہ سوٹ</option>
-          <option>بچوں کے کپڑے</option>
-          <option>دیگر</option>
-        </select>
+          <div class="field">
+            <label for="phone">موبائل نمبر *</label>
+            <input id="phone" name="phone" type="tel" required
+                   placeholder="03xx xxxxxxx">
+          </div>
 
-        <label for="qty">جوڑوں کی تعداد</label>
-        <input id="qty" type="number" min="1"
-          max="100" value="1" required>
+          <div class="field">
+            <label for="clothes">لباس کی قسم *</label>
+            <select id="clothes" name="clothes" required>
+              <option value="">منتخب کریں</option>
+              <option>شلوار قمیض</option>
+              <option>پینٹ شرٹ</option>
+              <option>ویسٹ کوٹ</option>
+              <option>کوٹ / سوٹ</option>
+              <option>دیگر</option>
+            </select>
+          </div>
 
-        <label for="requestType">درخواست کی قسم</label>
-        <select id="requestType">
-          <option>قیمت معلوم کرنا</option>
-          <option>آرڈر کنفرم کرنا</option>
-        </select>
+          <div class="field">
+            <label for="qty">لباس کی تعداد *</label>
+            <input id="qty" name="qty" type="number"
+                   min="1" value="1" required>
+          </div>
 
-        <label for="size">سائز یا پیمائش</label>
-        <input id="size" placeholder="اپنی پیمائش لکھیں">
+          <div class="field">
+            <label for="request">آرڈر کی نوعیت</label>
+            <select id="request" name="request">
+              <option>نئی سلائی</option>
+              <option>رد و بدل</option>
+              <option>مرمت</option>
+            </select>
+          </div>
 
-        <label for="date">ڈیلیوری کی تاریخ</label>
-        <input id="date" type="date">
+          <div class="field">
+            <label for="date">مطلوبہ تاریخ</label>
+            <input id="date" name="date" type="date">
+          </div>
 
-        <label for="design">ڈیزائن کی تفصیل</label>
-        <textarea id="design"
-          placeholder="اپنی پسند کا ڈیزائن لکھیں"></textarea>
+          <div class="field full">
+            <label for="measure">پیمائش کی تفصیلات</label>
+            <textarea id="measure" name="measure"
+              placeholder="لمبائی، چھاتی، بازو، شلوار وغیرہ"></textarea>
+          </div>
 
-        <label for="address">علاقہ یا پتہ</label>
-        <input id="address" placeholder="اپنا علاقہ لکھیں">
+          <div class="field full">
+            <label for="design">ڈیزائن / کپڑے کی تفصیل</label>
+            <textarea id="design" name="design"
+              placeholder="اپنی پسند کا ڈیزائن یا کپڑے کی تفصیل"></textarea>
+          </div>
 
-        <button type="submit">
-          واٹس ایپ پر آرڈر بھیجیں
+          <div class="field full">
+            <label for="address">پتہ یا اضافی ہدایات</label>
+            <textarea id="address" name="address"
+              placeholder="اختیاری"></textarea>
+          </div>
+
+        </div>
+
+        <button class="submit" type="submit">
+          واٹس ایپ پر آرڈر بھیجیں ➜
         </button>
 
+        <p class="note">
+          آرڈر بھیجنے سے پہلے واٹس ایپ میں تفصیلات چیک کر لیں۔
+        </p>
+
       </form>
-
-      <div class="contact">
-        <h2>📞 ہم سے رابطہ کریں</h2>
-        <p dir="ltr">0334 9041077</p>
-
-        <a class="whatsapp"
-          href="https://wa.me/923349041077"
-          target="_blank" rel="noopener">
-          واٹس ایپ کھولیں
-        </a>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    © <span id="year"></span> MURTAZA TS
-    — آن لائن درزی سروس
-  </footer>
+    <aside class="side-card">
+      <h3>ہم سے رابطہ کریں</h3>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+      <p>
+        آرڈر سے متعلق سوال یا رہنمائی کے لیے
+        واٹس ایپ پر رابطہ کریں۔
+      </p>
 
-    document.getElementById("orderForm")
-      .addEventListener("submit", function(event) {
-        event.preventDefault();
+      <a class="wa"
+         href="https://wa.me/923349041077"
+         target="_blank"
+         rel="noopener">
+        واٹس ایپ: 0334 9041077
+      </a>
 
-        const value = id =>
-          document.getElementById(id).value.trim();
+      <ul>
+        <li>اپنی پیمائش درج کریں</li>
+        <li>ڈیزائن کی وضاحت لکھیں</li>
+        <li>آرڈر بھیجنے سے پہلے معلومات چیک کریں</li>
+      </ul>
+    </aside>
 
-        const message =
-          "MURTAZA TS - آرڈر کی درخواست\n" +
-          "نام: " + value("name") + "\n" +
-          "موبائل: " + value("phone") + "\n" +
-          "کپڑوں کی قسم: " + value("kind") + "\n" +
-          "جوڑوں کی تعداد: " + value("qty") + "\n" +
-          "درخواست: " + value("requestType") + "\n" +
-          "سائز: " + value("size") + "\n" +
-          "ڈیلیوری تاریخ: " + value("date") + "\n" +
-          "ڈیزائن: " + value("design") + "\n" +
-          "پتہ: " + value("address");
+  </div>
+</main>
 
-        const whatsappURL =
-          "https://wa.me/923349041077?text=" +
-          encodeURIComponent(message);
+<footer>
+  <b>MURTAZA TS</b>
+  <br>
+  آپ کے لباس، آپ کے انداز کے مطابق
+  <br>
+  © 2026 — جملہ حقوق محفوظ ہیں
+</footer>
 
-        window.open(whatsappURL, "_blank");
-      });
-  </script>
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = new FormData(this);
+
+  const fields = [
+    ["name", "نام"],
+    ["phone", "موبائل نمبر"],
+    ["clothes", "لباس کی قسم"],
+    ["qty", "تعداد"],
+    ["request", "آرڈر کی نوعیت"],
+    ["date", "مطلوبہ تاریخ"],
+    ["measure", "پیمائش"],
+    ["design", "ڈیزائن / کپڑے کی تفصیل"],
+    ["address", "پتہ / اضافی ہدایات"]
+  ];
+
+  let message = "السلام علیکم، MURTAZA TS پر نیا آرڈر:\n";
+
+  fields.forEach(function(item) {
+    const value = (form.get(item[0]) || "").toString().trim();
+
+    if (value) {
+      message += "\n" + item[1] + ": " + value;
+    }
+  });
+
+  const whatsappURL =
+    "https://wa.me/923349041077?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
 
 </body>
 </html>
